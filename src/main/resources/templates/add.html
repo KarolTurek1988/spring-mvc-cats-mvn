@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Add Cat</title>
+</head>
+<body>
+	<h1>Add Cat</h1>
+	<div style="color: green;" th:if="${add}">Your cat has
+		been added!</div>
+	<form th:action="@{/add}" method="post">
+		<div>
+			<label> Name : <input type="text" name="name" />
+			</label>
+		</div>
+		<div>
+			<label> Age: <input type="text" name="age" />
+			</label>
+		</div>
+		<div>
+			<label> Rase: <input type="text" name="rase" />
+			</label>
+		</div>
+		<div>
+			<input type="submit" value="Save Cat" />
+		</div>
+	</form>
+	<p>
+		<a th:href="@{/}">back</a>
+	</p>
+</body>
+</html>
