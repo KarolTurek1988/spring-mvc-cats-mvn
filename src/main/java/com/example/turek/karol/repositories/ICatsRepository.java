@@ -8,5 +8,6 @@ import com.example.turek.karol.models.Cat;
 
 public interface ICatsRepository extends JpaRepository<Cat, Long> {
 	Cat findByName(String name);
+	Cat findById(long id);
 	List<Cat> findByUserName(String name);
 }

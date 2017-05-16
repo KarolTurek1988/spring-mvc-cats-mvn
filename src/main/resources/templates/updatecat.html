@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
-<title>Add Cat</title>
+<title>Update Cat</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
 	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
@@ -15,7 +15,6 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body>
-	<h1>Add Cat</h1>
 	<div class="navbar navbar-default navbar-static-top">
 		<div class="container">
 			<div class="navbar-header">
@@ -35,10 +34,13 @@
 	<div class="row align-items-center">
 		<div class="col col-lg-3"></div>
 		<div class="col col-lg-6">
-			<div class="alert alert-success" role="alert" th:if="${add}">Your
-				cat has been added!</div>
+			<h1>Update Cat</h1>
+			<div class="alert alert-success" role="alert" th:if="${update}">Your
+				cat has been updated!</div>
+			<div class="alert alert-info" role="alert" th:if="${error}">Change
+				a name, age or rase</div>
 			<form style="padding: 10px;" class="navbar navbar-default"
-				th:action="@{/add}" method="post">
+				th:action="@{/updatecat}" method="post">
 				<div class="form-group">
 					<input type="text" class="form-control" placeholder="Username"
 						aria-describedby="basic-addon1" name="name" />
@@ -53,7 +55,7 @@
 				</div>
 				<div>
 					<input class="btn btn-default btn-sm dropdown-toggle" type="submit"
-						value="Save Cat" />
+						value="Update Cat" />
 				</div>
 
 			</form>
